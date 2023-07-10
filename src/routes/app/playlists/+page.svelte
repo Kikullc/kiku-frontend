@@ -1,3 +1,11 @@
+<script>
+    import { onMount } from 'svelte';
+    import { route } from '../../../scripts/store.js';
+
+    onMount(() => {
+        route.set(window.location.pathname);  // Или установите это значение на маршрут текущей страницы
+    });
+</script>
 <div class="w-full h-[80%] overflow-y-scroll box-border">
     <div>
         <h2 class="pl-[4%] pt-[3%] box-border">Плейлисты</h2>

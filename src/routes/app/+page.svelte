@@ -1,6 +1,14 @@
+<script>
+    import { onMount } from 'svelte';
+    import { route } from '../../scripts/store.js';
+
+    onMount(() => {
+        route.set(window.location.pathname);  // Или установите это значение на маршрут текущей страницы
+    });
+</script>
 <div class="w-full h-[80%] overflow-y-scroll box-border">
     <div>
-        <h2 class="pl-[4%] pt-[3%] box-border">Профиль</h2>
+        <h2 class="pl-[4%] pt-[3%] box-border">Жанры</h2>
         <div class="flex justify-around pt-[3%]">
             <div class="bg-[#454545] w-[100px] h-[100px] relative">
                 <p class="absolute top-0 left-0">shadowraze</p>
