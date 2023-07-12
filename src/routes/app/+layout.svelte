@@ -1,10 +1,15 @@
 <script lang="ts">
     import { route } from '../../scripts/store.js';
+    import {goto} from "$app/navigation";
     let currentRoute = '/';
     // Подписываемся на обновления маршрута
     route.subscribe(value => {
         currentRoute = value;
     });
+    let token = localStorage.getItem('jwt');
+    if(!token){
+        goto('/')
+    }
 </script>
 <div class="bg-[#1B1B1B] w-full h-[60px] flex items-center">
     <a class="align-middle text-center basis-1/6 {currentRoute === '/app' ? 'text-[#AE88FF]' : 'text-white'}  ml-[3%]" href="/app">Главная</a>
